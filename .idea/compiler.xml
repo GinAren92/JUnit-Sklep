@@ -9,5 +9,8 @@
         <module name="JUnit-Skelp" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="JUnit-Skelp" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>

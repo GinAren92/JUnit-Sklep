@@ -9,7 +9,82 @@ class WherehouseTest {
     }
 
     @org.junit.jupiter.api.Test
-    void productAvaibilty() {
+    void productAvaibilityFirstIfShouldReturnTrue(){
+        //given
+        String productName = "K x10";
+        int productQt = 1;
+        OrderList orders = new OrderList();
+
+        //when
+        orders.addToOrderList(productName,productQt);
+        boolean result = objectUnderTest.productAvaibilty(productName, productQt, orders);
+
+        //then
+        assertTrue(result);
+    }
+
+    @org.junit.jupiter.api.Test
+    void productAvaibilitySecondIfShouldReturnTrue(){
+        //given
+        String productName = "K x10";
+        int productQt = 1;
+        OrderList orders = new OrderList();
+
+        //when
+        orders.addToOrderList(productName,productQt);
+        boolean result = objectUnderTest.productAvaibilty(productName, productQt, orders);
+
+        //then
+        assertTrue(result);
+    }
+
+    @org.junit.jupiter.api.Test
+    void productAvaibilitySecondIfShouldReturnFalse(){
+        //given
+        String productName = "K";
+        int productQt = 1;
+        OrderList orders = new OrderList();
+
+        //when
+        orders.addToOrderList(productName,productQt);
+        boolean result = objectUnderTest.productAvaibilty(productName, productQt, orders);
+
+        //then
+        assertFalse(result);
+    }
+
+    @org.junit.jupiter.api.Test
+    void productAvaibilityThirdIfShouldReturnTrue(){
+        //given
+        String productName = "K x10";
+        int productQt = 1;
+        OrderList orders = new OrderList();
+
+        //when
+        orders.addToOrderList(productName,productQt);
+        boolean result = objectUnderTest.productAvaibilty(productName, productQt, orders);
+
+        //then
+        assertTrue(result);
+    }
+
+    @org.junit.jupiter.api.Test
+    void productAvaibilityThirdIfShouldReturnFalse(){
+        //given
+        String productName = "K x10";
+        int productQt = 14;
+        OrderList orders = new OrderList();
+
+        //when
+        orders.addToOrderList(productName,productQt);
+        boolean result = objectUnderTest.productAvaibilty(productName, productQt, orders);
+
+        //then
+        assertFalse(result);
+    }
+
+    @org.junit.jupiter.api.Test
+    void productAvaibilityElseShouldReturnTrue(){
         //given
         String productName = "K x10";
         int productQt = 1;
@@ -20,16 +95,49 @@ class WherehouseTest {
 
         //then
         assertTrue(result);
+    }
 
+    @org.junit.jupiter.api.Test
+    void productAvaibilityElseShouldReturnFalse(){
         //given
-        productName = "K x10";
-        productQt = 1;
-        orders = new OrderList();
+        String productName = "K";
+        int productQt = 1;
+        OrderList orders = new OrderList();
 
         //when
-        result = objectUnderTest.productAvaibilty(productName, productQt, orders);
+        boolean result = objectUnderTest.productAvaibilty(productName, productQt, orders);
+
+        //then
+        assertFalse(result);
+    }
+
+    @org.junit.jupiter.api.Test
+    void productAvaibilityElseSecondIfShouldReturnTrue(){
+        //given
+        String productName = "K x10";
+        int productQt = 1;
+        OrderList orders = new OrderList();
+
+        //when
+        boolean result = objectUnderTest.productAvaibilty(productName, productQt, orders);
 
         //then
         assertTrue(result);
     }
+
+    @org.junit.jupiter.api.Test
+    void productAvaibilityElseSecondIfShouldReturnFalse(){
+        //given
+        String productName = "K x10";
+        int productQt = 20;
+        OrderList orders = new OrderList();
+
+        //when
+        boolean result = objectUnderTest.productAvaibilty(productName, productQt, orders);
+
+        //then
+        assertFalse(result);
+    }
+
+
 }
